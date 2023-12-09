@@ -1,7 +1,7 @@
 package addurl
 
 import (
-	"github.com/KillReall666/url-shortener/url-shortener/internal/storage"
+	"github.com/KillReall666/url-shortener/internal/storage"
 	"github.com/teris-io/shortid"
 	"io"
 	"log"
