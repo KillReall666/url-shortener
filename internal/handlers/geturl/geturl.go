@@ -7,26 +7,26 @@ import (
 	"github.com/KillReall666/url-shortener/internal/storage"
 )
 
-type GetUrlHandler struct {
+type GetURLHandler struct {
 	Storage *storage.Storage
 }
 
-func NewGetUrlHandler(s *storage.Storage) *GetUrlHandler {
-	return &GetUrlHandler{
+func NewGetUrlHandler(s *storage.Storage) *GetURLHandler {
+	return &GetURLHandler{
 		Storage: s,
 	}
 }
 
-func (g *GetUrlHandler) GetUrl(w http.ResponseWriter, r *http.Request) {
+func (g *GetURLHandler) GetURL(w http.ResponseWriter, r *http.Request) {
 	url := r.URL.Path
 	id := strings.TrimLeft(url, "/")
 
-	respUrl := g.Storage.UrlStore[id]
-	if respUrl == "" {
+	respURL := g.Storage.URLStore[id]
+	if respURL == "" {
 		w.WriteHeader(http.StatusBadRequest)
 		return
 	}
 
-	w.Header().Set("Location", respUrl)
+	w.Header().Set("Location", respURL)
 	w.WriteHeader(http.StatusTemporaryRedirect)
 }

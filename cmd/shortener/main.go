@@ -15,12 +15,12 @@ func main() {
 
 	Store := storage.New()
 
-	addUrl := addurl.NewAddUrlHandler(Store)
-	getUrl := geturl.NewGetUrlHandler(Store)
+	addURL := addurl.NewAddUrlHandler(Store)
+	getURL := geturl.NewGetUrlHandler(Store)
 
 	r := mux.NewRouter()
-	r.HandleFunc("/", addUrl.AddUrl).Methods("POST")
-	r.HandleFunc("/{id}", getUrl.GetUrl).Methods("GET")
+	r.HandleFunc("/", addURL.AddURL).Methods("POST")
+	r.HandleFunc("/{id}", getURL.GetURL).Methods("GET")
 
 	srv := &http.Server{
 		Addr:    "localhost:8080",

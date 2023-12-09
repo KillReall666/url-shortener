@@ -10,17 +10,17 @@ import (
 	"github.com/teris-io/shortid"
 )
 
-type AddUrlHandler struct {
+type AddURLHandler struct {
 	Storage *storage.Storage
 }
 
-func NewAddUrlHandler(s *storage.Storage) *AddUrlHandler {
-	return &AddUrlHandler{
+func NewAddUrlHandler(s *storage.Storage) *AddURLHandler {
+	return &AddURLHandler{
 		Storage: s,
 	}
 }
 
-func (a *AddUrlHandler) AddUrl(w http.ResponseWriter, r *http.Request) {
+func (a *AddURLHandler) AddURL(w http.ResponseWriter, r *http.Request) {
 	body, err := io.ReadAll(r.Body)
 	if err != nil {
 		log.Println(err)
@@ -32,7 +32,7 @@ func (a *AddUrlHandler) AddUrl(w http.ResponseWriter, r *http.Request) {
 		log.Println(err)
 	}
 
-	a.Storage.UrlStore[id] = url
+	a.Storage.URLStore[id] = url
 
 	w.WriteHeader(http.StatusCreated)
 	w.Write([]byte("http://localhost:8080/" + id))
