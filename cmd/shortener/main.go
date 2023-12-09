@@ -15,8 +15,8 @@ func main() {
 
 	Store := storage.New()
 
-	addURL := addurl.NewAddUrlHandler(Store)
-	getURL := geturl.NewGetUrlHandler(Store)
+	addURL := addurl.NewAddURLHandler(Store)
+	getURL := geturl.NewGetURLHandler(Store)
 
 	r := mux.NewRouter()
 	r.HandleFunc("/", addURL.AddURL).Methods("POST")

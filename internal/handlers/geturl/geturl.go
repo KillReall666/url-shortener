@@ -11,7 +11,7 @@ type GetURLHandler struct {
 	Storage *storage.Storage
 }
 
-func NewGetUrlHandler(s *storage.Storage) *GetURLHandler {
+func NewGetURLHandler(s *storage.Storage) *GetURLHandler {
 	return &GetURLHandler{
 		Storage: s,
 	}

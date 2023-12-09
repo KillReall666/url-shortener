@@ -14,7 +14,7 @@ type AddURLHandler struct {
 	Storage *storage.Storage
 }
 
-func NewAddUrlHandler(s *storage.Storage) *AddURLHandler {
+func NewAddURLHandler(s *storage.Storage) *AddURLHandler {
 	return &AddURLHandler{
 		Storage: s,
 	}
