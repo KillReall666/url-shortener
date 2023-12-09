@@ -1,9 +1,10 @@
 package geturl
 
 import (
-	"github.com/KillReall666/url-shortener/url-shortener/internal/storage"
 	"net/http"
 	"strings"
+
+	"github.com/KillReall666/url-shortener/internal/storage"
 )
 
 type GetUrlHandler struct {

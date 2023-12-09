@@ -1,12 +1,14 @@
 package main
 
 import (
+	"log"
+	"net/http"
+
 	"github.com/KillReall666/url-shortener/internal/handlers/addurl"
 	"github.com/KillReall666/url-shortener/internal/handlers/geturl"
 	"github.com/KillReall666/url-shortener/internal/storage"
+
 	"github.com/gorilla/mux"
-	"log"
-	"net/http"
 )
 
 func main() {

@@ -1,11 +1,13 @@
 package addurl
 
 import (
-	"github.com/KillReall666/url-shortener/internal/storage"
-	"github.com/teris-io/shortid"
 	"io"
 	"log"
 	"net/http"
+
+	"github.com/KillReall666/url-shortener/internal/storage"
+
+	"github.com/teris-io/shortid"
 )
 
 type AddUrlHandler struct {
