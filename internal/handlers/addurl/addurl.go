@@ -47,6 +47,6 @@ func (a *AddURLHandler) AddURL(w http.ResponseWriter, r *http.Request) {
 	a.Storage.URLStore[id] = URL
 
 	w.WriteHeader(http.StatusCreated)
-	w.Write([]byte(a.cfg.ShortURLAddress + id))
+	w.Write([]byte("http://localhost:8080/" + id))
 
 }

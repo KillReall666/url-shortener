@@ -24,7 +24,7 @@ func main() {
 	r.HandleFunc("/{id}", getURL.GetURL).Methods("GET")
 
 	srv := &http.Server{
-		Addr:    cfg.Address,
+		Addr:    ":8080",
 		Handler: r,
 	}
 
