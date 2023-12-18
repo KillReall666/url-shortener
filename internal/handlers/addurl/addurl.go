@@ -1,6 +1,7 @@
 package addurl
 
 import (
+	"github.com/KillReall666/url-shortener/internal/config"
 	"io"
 	"log"
 	"net/http"
@@ -13,11 +14,13 @@ import (
 
 type AddURLHandler struct {
 	Storage *storage.Storage
+	cfg     config.RunConfig
 }
 
-func NewAddURLHandler(s *storage.Storage) *AddURLHandler {
+func NewAddURLHandler(s *storage.Storage, conf config.RunConfig) *AddURLHandler {
 	return &AddURLHandler{
 		Storage: s,
+		cfg:     conf,
 	}
 }
 
@@ -44,6 +47,6 @@ func (a *AddURLHandler) AddURL(w http.ResponseWriter, r *http.Request) {
 	a.Storage.URLStore[id] = URL
 
 	w.WriteHeader(http.StatusCreated)
-	w.Write([]byte("http://localhost:8080/" + id))
+	w.Write([]byte(a.cfg.ShortURLAddress + id))
 
 }

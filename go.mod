@@ -3,6 +3,7 @@ module github.com/KillReall666/url-shortener
 go 1.20
 
 require (
+	github.com/caarlos0/env/v10 v10.0.0 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/gorilla/mux v1.8.1 // indirect
 	github.com/pmezard/go-difflib v1.0.0 // indirect

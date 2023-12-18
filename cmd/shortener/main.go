@@ -1,6 +1,7 @@
 package main
 
 import (
+	"github.com/KillReall666/url-shortener/internal/config"
 	"log"
 	"net/http"
 
@@ -12,10 +13,10 @@ import (
 )
 
 func main() {
-
+	cfg := config.LoadConfig()
 	Store := storage.New()
 
-	addURL := addurl.NewAddURLHandler(Store)
+	addURL := addurl.NewAddURLHandler(Store, cfg)
 	getURL := geturl.NewGetURLHandler(Store)
 
 	r := mux.NewRouter()
@@ -23,7 +24,7 @@ func main() {
 	r.HandleFunc("/{id}", getURL.GetURL).Methods("GET")
 
 	srv := &http.Server{
-		Addr:    "localhost:8080",
+		Addr:    cfg.Address,
 		Handler: r,
 	}
 
