@@ -7,8 +7,8 @@ import (
 )
 
 type RunConfig struct {
-	Address         string
-	ShortURLAddress string
+	Address         string `env:"SERVER_ADDRESS"`
+	ShortURLAddress string `env:"BASE_URL"`
 }
 
 const (
