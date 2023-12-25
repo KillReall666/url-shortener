@@ -12,8 +12,8 @@ type RunConfig struct {
 }
 
 const (
-	defaultAddress         = "" //":8080"
-	defaultShortURLAddress = "" //"http://localhost:8080/"
+	defaultAddress         = ":8080"
+	defaultShortURLAddress = "http://localhost:8080/"
 )
 
 func LoadConfig() RunConfig {
