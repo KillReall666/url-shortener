@@ -24,13 +24,14 @@ func main() {
 	r.HandleFunc("/{id}", getURL.GetURL).Methods("GET")
 
 	srv := &http.Server{
-		Addr:    ":8080",
+		Addr:    cfg.Address,
 		Handler: r,
 	}
 
+	log.Println("server started on:", srv.Addr)
 	if err := srv.ListenAndServe(); err != nil {
 		log.Println(err)
 	}
 	//СЮДА НЕ ПРОХОДИТ
-	log.Println("server started on:", srv.Addr)
+
 }

@@ -22,6 +22,8 @@ func LoadConfig() RunConfig {
 	flag.StringVar(&cfg.Address, "a", defaultAddress, "server address")
 	flag.StringVar(&cfg.ShortURLAddress, "b", defaultShortURLAddress, "returned link address")
 
+	flag.Parse()
+
 	err := env.Parse(&cfg)
 	if err != nil {
 		log.Println(err)
