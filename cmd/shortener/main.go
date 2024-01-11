@@ -28,11 +28,10 @@ func main() {
 		Handler: r,
 	}
 
-	log.Println("server started on:", srv.Addr, " port")
+	log.Println("server started on:", srv.Addr)
 	if err := srv.ListenAndServe(); err != nil {
 		log.Println(err)
 	}
-	//для мержа
 	//СЮДА НЕ ПРОХОДИТ
 
 }
