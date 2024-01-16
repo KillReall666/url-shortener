@@ -1,3 +1,0 @@
-#!/bin/bash
-go build -o ./cmd/shortener/shortener ./cmd/shortener
-./shortenertestbeta-darwin-amd64 -test.v -test.run=^TestIteration4$ -binary-path=cmd/shortener/shortener -source-path=. -server-port="8081"
